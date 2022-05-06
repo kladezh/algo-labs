@@ -1,8 +1,6 @@
 #include <iostream>
 
-int main() {
-    setlocale(LC_ALL, "rus");
-
+void task3() {
     std::string string;
     std::cout << "Введите строку: ";
     std::cin >> string;
@@ -10,7 +8,7 @@ int main() {
     // проверить если нет букв 'o'
     if (string.find("o") == std::string::npos) {
         std::cout << "Ошибка: в слове нет букв \'o\'\n";
-        return 1;
+        exit(1);
     }
 
     // найти кол-во всех букв в слове
@@ -26,6 +24,4 @@ int main() {
 
     std::cout << "Строка: \"" << string << "\"\n";
     std::cout << "Кол-во всех букв: " << letters_count << "\n";
-
-    return 0;
 }

@@ -14,16 +14,14 @@ bool is_simple(const int number) {
     return true;
 }
 
-int main() {
-    setlocale(LC_ALL, "rus");
-
+void task1() {
     int number;
     std::cout << "Введите натуральное число, большее единицы: ";
     std::cin >> number;
 
     if (number < 1) {
         std::cout << "Ошибка: число должно быть больше единицы...";
-        return 1;
+        exit(1);
     }
 
     // найти наибольший простой делитель
@@ -35,6 +33,4 @@ int main() {
     }
 
     std::cout << "Наибольшой простой делитель числа (" << number << "): " << max_simple_div << "\n";
-
-    return 0;
 }
