@@ -24,12 +24,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="task6.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="task1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="task3.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="task6.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
