@@ -1,4 +1,4 @@
-#include <iostream>
+#include "task3.h"
 
 void task3() {
     std::string string;

@@ -1,6 +1,5 @@
-#pragma once
-#include "task1.cpp";
-#include "task3.cpp";
+#include "task1.h";
+#include "task3.h";
 
 int main() {
 	setlocale(LC_ALL, "rus");

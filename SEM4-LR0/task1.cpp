@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include "task1.h"
 
 bool do_divide(const int divisible, const int divider) {
     return (divisible % divider == 0);
