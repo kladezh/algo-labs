@@ -32,4 +32,4 @@
 [Лекция PDF - Генерация последовательностей](https://github.com/kladezh/algorithms-labs/blob/master/SEM4-LR1/lection.docx)
 
 ## Лабораторная 2
-[Лекция PDF - Сортировки массива](https://github.com/kladezh/algorithms-labs/blob/master/SEM4-LR2/lection.docx)
+[Лекция PDF - Сортировки массива](https://github.com/kladezh/algorithms-labs/blob/master/SEM4-LR2/lection.doc)
