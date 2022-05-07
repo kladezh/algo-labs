@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEM4-LR1", "SEM4-LR1\SEM4-L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEM4-LR2", "SEM4-LR2\SEM4-LR2.csproj", "{03AF6765-A01E-4725-A3B0-61D30336C15D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEM4-LR3", "SEM4-LR3\SEM4-LR3.csproj", "{921F666B-420C-482B-8C0B-FC145073B042}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{03AF6765-A01E-4725-A3B0-61D30336C15D}.Release|x64.Build.0 = Release|Any CPU
 		{03AF6765-A01E-4725-A3B0-61D30336C15D}.Release|x86.ActiveCfg = Release|Any CPU
 		{03AF6765-A01E-4725-A3B0-61D30336C15D}.Release|x86.Build.0 = Release|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Debug|x64.Build.0 = Debug|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Debug|x86.Build.0 = Debug|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Release|x64.ActiveCfg = Release|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Release|x64.Build.0 = Release|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Release|x86.ActiveCfg = Release|Any CPU
+		{921F666B-420C-482B-8C0B-FC145073B042}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

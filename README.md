@@ -33,3 +33,6 @@
 
 ## Лабораторная 2
 [Лекция PDF - Сортировки массива](https://github.com/kladezh/algorithms-labs/blob/master/SEM4-LR2/lection.doc)
+
+## Лабораторная 3
+[Лекция PDF - Поиск в массиве](https://github.com/kladezh/algorithms-labs/blob/master/SEM4-LR3/lection.doc)
