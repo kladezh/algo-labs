@@ -29,4 +29,4 @@
 
 ## Лабораторная 1
 
-[Лекция PDF - Генерация последовательностей](https://github.com/kladezh/algorithms-labs/SEM4-LR1/lection.docx)
+[Лекция PDF - Генерация последовательностей](https://github.com/kladezh/algorithms-labs/blob/master/SEM4-LR1/lection.docx)
