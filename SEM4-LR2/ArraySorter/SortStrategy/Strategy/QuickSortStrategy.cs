@@ -9,35 +9,40 @@
 
         private void DoSort(ref int[] array, int first, int last)
         {
-            int i = first, j = last, x = array[(first + last) / 2];
+            if(first >= last)
+                return;
 
-            do
+            int pivot = ResolvePivot(ref array, first, last);
+
+            DoSort(ref array, first, pivot - 1);
+            DoSort(ref array, pivot + 1, last);
+        }
+
+        private int ResolvePivot(ref int[] array, int min, int max)
+        {
+            int temp;
+
+            int pivot = min - 1;
+
+            for (int i = min; i <= max; i++)
             {
-                while (array[i] < x) i++;
-                while (array[j] > x) j++;
-
-                if(i <= j)
+                if(array[i] < array[max])
                 {
-                    if (i < j)
-                    {
-                        int temp = array[i];
-                        array[i] = array[j];
-                        array[j] = temp;
-                    }
-
-                    i++;
-                    j--;
+                    pivot++;
+                    
+                    temp = array[pivot];
+                    array[pivot] = array[i];
+                    array[i] = temp;
                 }
-            } while (i <= j);
+            }
 
-            if( i < last)
-            {
-                DoSort(ref array, i, last);
-            }
-            if(first > j)
-            {
-                DoSort(ref array, first, j);
-            }
+            pivot++;
+
+            temp = array[pivot];
+            array[pivot] = array[max];
+            array[max] = temp;
+
+            return pivot;
         }
     }
 }
