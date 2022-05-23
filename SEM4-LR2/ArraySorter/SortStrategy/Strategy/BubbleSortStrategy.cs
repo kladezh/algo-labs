@@ -26,5 +26,7 @@
                 length--;
             }
         }
+
+        public override string ToString() => "Сортировка Пузырьком";
     }
 }

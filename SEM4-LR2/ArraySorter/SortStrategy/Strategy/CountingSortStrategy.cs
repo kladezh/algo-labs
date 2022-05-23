@@ -28,5 +28,7 @@
                 }
             }
         }
+
+        public override string ToString() => "Сортировка Подсчётом";
     }
 }

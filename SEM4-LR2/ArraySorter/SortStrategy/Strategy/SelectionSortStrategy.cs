@@ -20,5 +20,7 @@
                 array[min] = temp;
             }
         }
+
+        public override string ToString() => "Быстрая Сортировка";
     }
 }

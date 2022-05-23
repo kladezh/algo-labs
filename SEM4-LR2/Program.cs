@@ -1,9 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArraySort
 {
+    using SortStrategyMap = Dictionary<int, SortStrategy>;
+
     internal class Program
     {
+        private static SortStrategyMap SortMap = new SortStrategyMap()
+        {
+            { 1, new SelectionSortStrategy()},
+            { 2, new BubbleSortStrategy()},
+            { 3, new InsertSortStrategy()},
+            { 4, new ShellSortStrategy()},
+            { 5, new HeapSortStrategy()},
+            { 6, new MergeSortStrategy()},
+            { 7, new QuickSortStrategy()},
+            { 8, new CountingSortStrategy()},
+            { 9, new RadixSortStrategy()},
+        };
+
         static void Main(string[] args)
         {
             int[] array = ConsoleInitArray();
@@ -11,6 +27,7 @@ namespace ArraySort
             Console.WriteLine("\nСгенерированный массив:");
             ConsoleWriteArray(array);
 
+            Console.WriteLine("Выберите вариант сортировки:");
             ConsoleWriteSort();
 
             Console.Write("\nВвод: ");
@@ -18,7 +35,7 @@ namespace ArraySort
 
             ArraySorter sorter = new ArraySorter();
 
-            sorter.Strategy = GetSortStrategy(choice);
+            sorter.Strategy = ConsoleGetSortStrategy(choice);
             sorter.Sort(ref array);
 
             Console.WriteLine("\nОстортированный массив:");
@@ -55,52 +72,14 @@ namespace ArraySort
 
         static void ConsoleWriteSort()
         {
-            Console.WriteLine("Выберите вариант сортировки:");
-            Console.WriteLine("1 - сортировка выбором");
-            Console.WriteLine("2 - сортировка пузырьком");
-            Console.WriteLine("3 - сортировка вставкой");
-            Console.WriteLine("4 - сортировка Шелла");
-            Console.WriteLine("5 - пирамидальная сортировка");
-            Console.WriteLine("6 - сортировка слиянием");
-            Console.WriteLine("7 - быстрая сортировка");
-            Console.WriteLine("8 - сортировка подсчётом");
-            Console.WriteLine("9 - поразрядная сортировка");
+            foreach (var sort in SortMap)
+                Console.WriteLine($"{sort.Key} - {sort.Value.ToString()}");
         }
 
-        static SortStrategy GetSortStrategy(int number)
+        static SortStrategy ConsoleGetSortStrategy(int number)
         {
-            switch (number)
-            {
-                case 1:
-                    return new SelectionSortStrategy();
-
-                case 2:
-                    return new BubbleSortStrategy();
-
-                case 3:
-                    return new InsertSortStrategy();
-
-                case 4:
-                    return new ShellSortStrategy();
-
-                case 5:
-                    return new HeapSortStrategy();
-
-                case 6:
-                    return new MergeSortStrategy();
-
-                case 7:
-                    return new QuickSortStrategy();
-
-                case 8:
-                    return new CountingSortStrategy();
-
-                case 9:
-                    return new RadixSortStrategy();
-
-                default:
-                    return null;
-            }
+            SortMap.TryGetValue(number, out SortStrategy sort);
+            return sort;
         }
     }
 }

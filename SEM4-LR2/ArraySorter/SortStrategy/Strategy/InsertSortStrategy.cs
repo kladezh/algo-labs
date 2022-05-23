@@ -6,5 +6,7 @@
         {
             GeneralInsertSort.Process(ref array, 0, 1);
         }
+
+        public override string ToString() => "Сортировка Вставками";
     }
 }

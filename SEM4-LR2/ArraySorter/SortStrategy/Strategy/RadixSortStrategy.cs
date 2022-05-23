@@ -59,5 +59,7 @@ namespace ArraySort
 
             return max;
         }
+
+        public override string ToString() => "Поразрядная Сортировка";
     }
 }

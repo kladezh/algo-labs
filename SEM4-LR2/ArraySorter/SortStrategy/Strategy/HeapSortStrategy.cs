@@ -37,5 +37,7 @@
 
             array[vacant] = key;
         }
+
+        public override string ToString() => "Пирамидальная Сортировка";
     }
 }

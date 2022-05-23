@@ -44,5 +44,7 @@
 
             return pivot;
         }
+
+        public override string ToString() => "Быстрая Сортировка";
     }
 }

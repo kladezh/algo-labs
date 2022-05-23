@@ -17,5 +17,7 @@
                 i /= 2;
             }
         }
+
+        public override string ToString() => "Сортировка Шелла";
     }
 }

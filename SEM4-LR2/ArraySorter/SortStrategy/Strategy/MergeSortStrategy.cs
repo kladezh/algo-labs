@@ -46,5 +46,7 @@
                 array[first + pos3] = temp[pos3];
             }
         }
+
+        public override string ToString() => "Сортировка Слиянием";
     }
 }
