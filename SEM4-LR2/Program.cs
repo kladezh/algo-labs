@@ -41,7 +41,7 @@ namespace ArraySort
             {
                 Console.WriteLine($"[{i}] => {array[i]}");
             }
-            Console.WriteLine("}");
+            Console.WriteLine("}\n");
         }
 
         static void Main(string[] args)
@@ -50,12 +50,14 @@ namespace ArraySort
 
             int[] array = ArrayInit();
 
-            Console.WriteLine("Сгенерированный массив:");
+            Console.WriteLine("\nСгенерированный массив:");
             ConsoleWriteArray(array);
 
             ConsoleWriteSort();
 
+            Console.Write("\nВвод: ");
             int choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:
@@ -100,7 +102,7 @@ namespace ArraySort
 
             sorter.Sort(ref array);
 
-            Console.WriteLine("Остортированный массив:");
+            Console.WriteLine("\nОстортированный массив:");
             ConsoleWriteArray(array);
 
             Console.ReadKey();
