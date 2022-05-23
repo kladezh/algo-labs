@@ -4,21 +4,30 @@ namespace ArraySort
 {
     internal class Program
     {
-        static void ConsoleWriteSort()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Выберите вариант сортировки:");
-            Console.WriteLine("1 - сортировка выбором");
-            Console.WriteLine("2 - сортировка пузырьком");
-            Console.WriteLine("3 - сортировка вставкой");
-            Console.WriteLine("4 - сортировка Шелла");
-            Console.WriteLine("5 - пирамидальная сортировка");
-            Console.WriteLine("6 - сортировка слиянием");
-            Console.WriteLine("7 - быстрая сортировка");
-            Console.WriteLine("8 - сортировка подсчётом");
-            Console.WriteLine("9 - поразрядная сортировка");
+            int[] array = ConsoleInitArray();
+
+            Console.WriteLine("\nСгенерированный массив:");
+            ConsoleWriteArray(array);
+
+            ConsoleWriteSort();
+
+            Console.Write("\nВвод: ");
+            int choice = int.Parse(Console.ReadLine());
+
+            ArraySorter sorter = new ArraySorter();
+
+            sorter.Strategy = GetSortStrategy(choice);
+            sorter.Sort(ref array);
+
+            Console.WriteLine("\nОстортированный массив:");
+            ConsoleWriteArray(array);
+
+            Console.ReadKey();
         }
 
-        static int[] ArrayInit()
+        static int[] ConsoleInitArray()
         {
             Console.Write("Введите размер массива: ");
             int arrayLength = int.Parse(Console.ReadLine());
@@ -44,68 +53,54 @@ namespace ArraySort
             Console.WriteLine("}\n");
         }
 
-        static void Main(string[] args)
+        static void ConsoleWriteSort()
         {
-            ArraySorter sorter = new ArraySorter();
+            Console.WriteLine("Выберите вариант сортировки:");
+            Console.WriteLine("1 - сортировка выбором");
+            Console.WriteLine("2 - сортировка пузырьком");
+            Console.WriteLine("3 - сортировка вставкой");
+            Console.WriteLine("4 - сортировка Шелла");
+            Console.WriteLine("5 - пирамидальная сортировка");
+            Console.WriteLine("6 - сортировка слиянием");
+            Console.WriteLine("7 - быстрая сортировка");
+            Console.WriteLine("8 - сортировка подсчётом");
+            Console.WriteLine("9 - поразрядная сортировка");
+        }
 
-            int[] array = ArrayInit();
-
-            Console.WriteLine("\nСгенерированный массив:");
-            ConsoleWriteArray(array);
-
-            ConsoleWriteSort();
-
-            Console.Write("\nВвод: ");
-            int choice = int.Parse(Console.ReadLine());
-
-            switch (choice)
+        static SortStrategy GetSortStrategy(int number)
+        {
+            switch (number)
             {
                 case 1:
-                    sorter.Strategy = new SelectionSortStrategy();
-                    break;
+                    return new SelectionSortStrategy();
 
                 case 2:
-                    sorter.Strategy = new BubbleSortStrategy();
-                    break;
+                    return new BubbleSortStrategy();
 
                 case 3:
-                    sorter.Strategy = new InsertSortStrategy();
-                    break;
+                    return new InsertSortStrategy();
 
                 case 4:
-                    sorter.Strategy = new ShellSortStrategy();
-                    break;
+                    return new ShellSortStrategy();
 
                 case 5:
-                    sorter.Strategy = new HeapSortStrategy();
-                    break;
+                    return new HeapSortStrategy();
 
                 case 6:
-                    sorter.Strategy = new MergeSortStrategy();
-                    break;
+                    return new MergeSortStrategy();
 
                 case 7:
-                    sorter.Strategy = new QuickSortStrategy();
-                    break;
+                    return new QuickSortStrategy();
 
                 case 8:
-                    sorter.Strategy = new CountingSortStrategy();
-                    break;
+                    return new CountingSortStrategy();
 
                 case 9:
-                    sorter.Strategy = new RadixSortStrategy();
-                    break;
+                    return new RadixSortStrategy();
 
                 default:
-                    break;
+                    return null;
             }
-
-            sorter.Sort(ref array);
-
-            Console.WriteLine("\nОстортированный массив:");
-            ConsoleWriteArray(array);
-
-            Console.ReadKey();
         }
     }
 }
