@@ -13,9 +13,9 @@ namespace ArraySort
             Console.WriteLine("4 - сортировка Шелла");
             Console.WriteLine("5 - пирамидальная сортировка");
             Console.WriteLine("6 - сортировка слиянием");
-            Console.WriteLine("7 - быстрая сортировка");
-            Console.WriteLine("8 - сортировка подсчётом");
-            Console.WriteLine("9 - поразрядная сортировка");
+            Console.WriteLine("7 - быстрая сортировка"); // ?
+            Console.WriteLine("8 - сортировка подсчётом"); // ?
+            Console.WriteLine("9 - поразрядная сортировка"); // ?
         }
 
         static int[] ArrayInit()
@@ -75,7 +75,7 @@ namespace ArraySort
                     break;
 
                 case 5:
-                    sorter.Strategy = new HeapSortStrategy(); // ?
+                    sorter.Strategy = new HeapSortStrategy();
                     break;
 
                 case 6:
@@ -83,15 +83,15 @@ namespace ArraySort
                     break;
 
                 case 7:
-                    sorter.Strategy = new QuickSortStrategy(); // ?
+                    sorter.Strategy = new QuickSortStrategy();
                     break;
 
                 case 8:
-                    sorter.Strategy = new CountingSortStrategy(); // ?
+                    sorter.Strategy = new CountingSortStrategy();
                     break;
 
                 case 9:
-                    sorter.Strategy = new RadixSortStrategy(); // ?
+                    sorter.Strategy = new RadixSortStrategy();
                     break;
 
                 default:
