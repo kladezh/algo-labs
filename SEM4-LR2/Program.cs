@@ -15,7 +15,7 @@ namespace ArraySort
             Console.WriteLine("6 - сортировка слиянием");
             Console.WriteLine("7 - быстрая сортировка");
             Console.WriteLine("8 - сортировка подсчётом");
-            Console.WriteLine("9 - поразрядная сортировка"); // ?
+            Console.WriteLine("9 - поразрядная сортировка");
         }
 
         static int[] ArrayInit()
