@@ -4,50 +4,28 @@
     {
         public void Sort(ref int[] array)
         {
-            int range = CountRange(array);
+            int min = int.MaxValue;
+            int max = int.MinValue;
 
-            DoSort(ref array, range);
-        }
-
-        private int CountRange(int[] array)
-        {
-            int max = 0;
-            for (int i = 0; i < array.Length; i++)
+            foreach (int elem in array)
             {
-                if(array[i] > max)
-                    max = array[i];
+                if (elem < min) min = elem;
+                if (elem > max) max = elem;
             }
+                
+            int[] counters = new int[max - min + 1];
 
-            return max;
-        }
+            foreach (int elem in array)
+                counters[elem - min]++;
 
-        private void DoSort(ref int[] array, int range)
-        {
-            int[] source = new int[array.Length];
-            int[] counter = new int[range + 1];
-
-            for (int i = 0; i < array.Length; i++)
-                source[i] = array[i];
-
-            for (int i = 0; i < counter.Length; i++)
-                counter[i] = 0;
-
-            for (int i = 0; i < array.Length; i++)
-                counter[array[i]]++;
-
-            int sumNum = 0;
-            for (int i = 0; i < counter.Length; i++)
+            int index = 0;
+            for (int number = 0; number < counters.Length; number++)
             {
-                int temp = counter[i];
-                counter[i] = sumNum;
-                sumNum += temp;
-            }
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                int temp = source[i];
-                array[counter[i]] = temp;
-                counter[i]++;
+                for (int count = 0; count < counters[number]; count++)
+                {
+                    array[index] = number + min;
+                    index++;
+                }
             }
         }
     }
