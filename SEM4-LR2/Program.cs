@@ -24,7 +24,8 @@ namespace SEM4_LR2
 
         static void Main(string[] args)
         {
-            int[] array = ConsoleInitArray();
+            Console.Write("Введите размер массива: ");
+            ConsoleInitArray(out int[] array);
 
             Console.WriteLine("\nСгенерированный массив:");
             ConsoleWriteArray(array);
@@ -46,20 +47,17 @@ namespace SEM4_LR2
             Console.ReadKey();
         }
 
-        static int[] ConsoleInitArray()
+        static void ConsoleInitArray(out int[] array)
         {
-            Console.Write("Введите размер массива: ");
-            int arrayLength = int.Parse(Console.ReadLine());
+            int length = int.Parse(Console.ReadLine());
 
-            int[] array = new int[arrayLength];
+            array = new int[length];
 
             Random random = new Random();
-            for (int i = 0; i < arrayLength; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = random.Next(0, 20);
             }
-
-            return array;
         }
 
         static void ConsoleWriteArray(int[] array)
