@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ArraySearch;
+
 namespace SEM4_LR3
 {
+    using SearchStrategyMap = Dictionary<int, SearchStrategy>;
+
     internal class Program
     {
-        private static Dictionary<int, string> SearchMap = new Dictionary<int, string>()
+        private static SearchStrategyMap SearchMap = new SearchStrategyMap()
         {
-            { 1, "Линейный Поиск"},
-            { 2, "Бинарный Поиск"},
-            { 3, "Поиск Фибоначчи"},
-            { 4, "Интерполяционный Поиск"},
+            { 1, new LinearSearchStrategy()},
+            { 2, new BinarySearchStrategy()},
+            { 3, new FibonacciSearchStrategy()},
+            { 4, new InterpolationSortStrategy()},
         };
 
         static void Main(string[] args)
@@ -33,10 +37,10 @@ namespace SEM4_LR3
             Console.WriteLine("Введите элемент:");
             int searchedElem = int.Parse(Console.ReadLine());
 
-            string searchStrategy = ConsoleGetSearchStrategy(selectedSearch);
+            ArraySearcher searcher = new ArraySearcher();
+            searcher.Strategy = ConsoleGetSearchStrategy(selectedSearch);
 
-            // searching elem...
-            int? index = null;
+            int? index = searcher.Search(array, searchedElem);
 
             Console.WriteLine(index is null ? "Элемент не найден..." : $"Элемент найден на позиции [{index}]");
 
@@ -71,9 +75,9 @@ namespace SEM4_LR3
                 Console.WriteLine($"{sort.Key} - {sort.Value}");
         }
 
-        static string ConsoleGetSearchStrategy(int number)
+        static SearchStrategy ConsoleGetSearchStrategy(int number)
         {
-            SearchMap.TryGetValue(number, out string search);
+            SearchMap.TryGetValue(number, out SearchStrategy search);
             return search;
         }
     }

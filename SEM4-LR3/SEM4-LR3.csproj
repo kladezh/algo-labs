@@ -50,5 +50,11 @@
     <None Include="App.config" />
     <None Include="lection.doc" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArraySearch\ArraySearch.csproj">
+      <Project>{d0662309-594b-4e9a-9511-60ab91f2bd39}</Project>
+      <Name>ArraySearch</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
