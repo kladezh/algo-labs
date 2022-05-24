@@ -72,7 +72,7 @@ namespace SEM4_LR3
         static void ConsoleWriteSearch()
         {
             foreach (var sort in SearchMap)
-                Console.WriteLine($"{sort.Key} - {sort.Value}");
+                Console.WriteLine($"{sort.Key} - {sort.Value.ToString()}");
         }
 
         static SearchStrategy ConsoleGetSearchStrategy(int number)

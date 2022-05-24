@@ -6,5 +6,6 @@
         {
             return 0;
         }
+        public override string ToString() => "Бинарный Поиск";
     }
 }
