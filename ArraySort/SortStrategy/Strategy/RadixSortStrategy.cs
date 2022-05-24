@@ -2,7 +2,7 @@
 
 namespace ArraySort
 {
-    internal class RadixSortStrategy : SortStrategy
+    public class RadixSortStrategy : SortStrategy
     {
         private const int RadixCount = 10;
 

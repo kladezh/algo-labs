@@ -1,6 +1,6 @@
 ﻿namespace ArraySort
 {
-    internal class BubbleSortStrategy : SortStrategy
+    public class BubbleSortStrategy : SortStrategy
     {
         public void Sort(ref int[] array)
         {

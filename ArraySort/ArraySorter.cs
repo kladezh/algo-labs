@@ -1,6 +1,6 @@
 ﻿namespace ArraySort
 {
-    internal class ArraySorter
+    public class ArraySorter
     {
         private SortStrategy _strategy;
 

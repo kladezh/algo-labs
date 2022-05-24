@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ArraySort
+using ArraySort;
+
+namespace SEM4_LR2
 {
     using SortStrategyMap = Dictionary<int, SortStrategy>;
 

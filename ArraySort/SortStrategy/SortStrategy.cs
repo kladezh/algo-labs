@@ -1,6 +1,6 @@
 ﻿namespace ArraySort
 {
-    internal interface SortStrategy
+    public interface SortStrategy
     {
         void Sort(ref int[] array);
     }

@@ -1,6 +1,6 @@
 ﻿namespace ArraySort
 {
-    internal class CountingSortStrategy : SortStrategy
+    public class CountingSortStrategy : SortStrategy
     {
         public void Sort(ref int[] array)
         {

@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{03AF6765-A01E-4725-A3B0-61D30336C15D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>SEM4_LR2</RootNamespace>
-    <AssemblyName>SEM4-LR2</AssemblyName>
+    <ProjectGuid>{831CC458-429D-45C4-85A8-432F85D53AF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArraySort</RootNamespace>
+    <AssemblyName>ArraySort</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,18 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ArraySorter.cs" />
+    <Compile Include="SortStrategy\SortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\BubbleSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\CountingSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\HeapSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\Helpers\GeneralInsertSort.cs" />
+    <Compile Include="SortStrategy\Strategy\InsertSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\MergeSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\QuickSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\RadixSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\SelectionSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\ShellSortStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="lection.doc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ArraySort\ArraySort.csproj">
-      <Project>{831cc458-429d-45c4-85a8-432f85d53af0}</Project>
-      <Name>ArraySort</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
