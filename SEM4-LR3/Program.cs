@@ -8,6 +8,14 @@ namespace SEM4_LR3
 {
     internal class Program
     {
+        private static Dictionary<int, string> SearchMap = new Dictionary<int, string>()
+        {
+            { 1, "Линейный Поиск"},
+            { 2, "Бинарный Поиск"},
+            { 3, "Поиск Фибоначчи"},
+            { 4, "Интерполяционный Поиск"},
+        };
+
         static void Main(string[] args)
         {
             Console.Write("Введите размер массива: ");
@@ -15,6 +23,24 @@ namespace SEM4_LR3
 
             Console.WriteLine("\nСгенерированный массив:");
             ConsoleWriteArray(array);
+
+            Console.WriteLine("Выберите вариант поиска:");
+            ConsoleWriteSearch();
+
+            Console.Write("\nВвод: ");
+            int selectedSearch = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите элемент:");
+            int searchedElem = int.Parse(Console.ReadLine());
+
+            string searchStrategy = ConsoleGetSearchStrategy(selectedSearch);
+
+            // searching elem...
+            int? index = null;
+
+            Console.WriteLine(index is null ? "Элемент не найден..." : $"Элемент найден на позиции [{index}]");
+
+            Console.ReadKey();
         }
 
         static void ConsoleInitArray(out int[] array)
@@ -38,6 +64,17 @@ namespace SEM4_LR3
                 Console.WriteLine($"[{i}] => {array[i]}");
             }
             Console.WriteLine("}\n");
+        }
+        static void ConsoleWriteSearch()
+        {
+            foreach (var sort in SearchMap)
+                Console.WriteLine($"{sort.Key} - {sort.Value}");
+        }
+
+        static string ConsoleGetSearchStrategy(int number)
+        {
+            SearchMap.TryGetValue(number, out string search);
+            return search;
         }
     }
 }
