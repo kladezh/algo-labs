@@ -4,19 +4,13 @@
     {
         public int? Search(int[] array, int elem)
         {
-            int k = 0, minIndex = Fibonacci(1);
+            int k = 0;
 
-            for(int fib = Fibonacci(k + 1); fib < array.Length; k++)
+            for (; Fibonacci(k) < array.Length; k++) ;
+     
+            for (int index, offset = 0; k > 0; )
             {
-                if(fib < minIndex)
-                    minIndex = fib;
-            }
-
-            int index, offset = 0;
-
-            for (; k > 0; )
-            {
-                index = offset + Fibonacci((--k) + 1);
+                index = offset + Fibonacci(--k);
 
                 if (index >= array.Length || elem < array[index])
                     continue;
