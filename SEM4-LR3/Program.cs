@@ -34,7 +34,7 @@ namespace SEM4_LR3
             Console.Write("\nВвод: ");
             int selectedSearch = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите элемент:");
+            Console.Write("Введите элемент: ");
             int searchedElem = int.Parse(Console.ReadLine());
 
             ArraySearcher searcher = new ArraySearcher();
@@ -42,7 +42,7 @@ namespace SEM4_LR3
 
             int? index = searcher.Search(array, searchedElem);
 
-            Console.WriteLine(index is null ? "Элемент не найден..." : $"Элемент найден на позиции [{index}]");
+            Console.WriteLine(index is null ? "\nЭлемент не найден..." : $"\nЭлемент найден на позиции [{index}].");
 
             Console.ReadKey();
         }
