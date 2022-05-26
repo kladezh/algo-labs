@@ -15,7 +15,7 @@ namespace SEM4_LR2
             { 2, new BubbleSortStrategy()},
             { 3, new InsertSortStrategy()},
             { 4, new ShellSortStrategy()},
-            { 5, new HeapSortStrategy()},
+            { 5, new MergeSortStrategy()},
             { 6, new MergeSortStrategy()},
             { 7, new QuickSortStrategy()},
             { 8, new CountingSortStrategy()},

@@ -9,42 +9,39 @@
 
         private void DoSort(ref int[] array, int n)
         {
-            for (int i = n / 2 - 1; i >= 0; i--)
+            for (int i = n / 2; i >= 1; i--)
             {
-                Heapify(ref array, i, n);
+                FixHeap(ref array, i, array[i], n);
             }
-            while (n > 1)
+            for(int i = array.Length; i >=2; i--)
             {
-                n--;
-
-                int temp = array[0];
-                array[0] = array[n];
-                array[n] = temp;
-
-                Heapify(ref array, 0, n);
+                int max = array[i];
+                FixHeap(ref array, 1, array[i], i - 1);
             }
         }
 
-        private void Heapify(ref int[] array, int index, int n)
+        private void FixHeap(ref int[] array, int root, int key, int bound)
         {
-            int curr = array[index];
-            int i = index;
-
-            for(; ; )
+            int vacant = root;
+            
+            while(2 * vacant <= bound)
             {
-                int left = i + i + 1;
-                int right = left  + 1;
+                int largerChild = 2 * vacant;
+                if(largerChild < bound && array[largerChild + 1] > array[largerChild])
+                {
+                    largerChild++;
+                }
 
-                if(left < n && array[left] > curr)
-                    i = left;
-                if(right < n && array[right] > array[i])
-                    i = right;
-                if (i == index) break;
-
-                array[index] = array[i];
-                array[i] = curr;
-                index = i;
+                if (key > array[largerChild])
+                    break;
+                else
+                {
+                    array[vacant] = array[largerChild];
+                    vacant = largerChild;
+                }
             }
+
+            array[vacant] = key;
         }
 
         public override string ToString() => "Пирамидальная Сортировка";
