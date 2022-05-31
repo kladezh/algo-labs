@@ -4,14 +4,12 @@ namespace ArraySort
 {
     public class HeapSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
-            DoSort(ref array, array.Length);
-
-            return _indexing;
+            CallSort(ref array, array.Length);
         }
 
-        private void DoSort(ref int[] array, int n)
+        private void CallSort(ref int[] array, int n)
         {
             for (int i = n / 2 - 1; i >= 0; i--)
             {

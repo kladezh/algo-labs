@@ -4,7 +4,7 @@ namespace ArraySort
 {
     public class ShellSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
             int i = 1;
             for (; 2 * i < array.Length; i *= 2) ;
@@ -18,8 +18,6 @@ namespace ArraySort
 
                 i /= 2;
             }
-
-            return _indexing;
         }
 
         public override string ToString() => "Сортировка Шелла";

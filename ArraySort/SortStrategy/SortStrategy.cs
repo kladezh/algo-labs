@@ -16,6 +16,15 @@ namespace ArraySort
             (b, a) = (a, b);
         }
 
-        abstract public List<int[]> Sort(ref int[] array);
+        public List<int[]> Sort(ref int[] array)
+        {
+            _indexing.Clear();
+
+            DoSort(ref array);
+
+            return _indexing;
+        }
+
+        abstract protected void DoSort(ref int[] array);
     }
 }

@@ -4,7 +4,7 @@ namespace ArraySort
 {
     public class BubbleSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
             int length = array.Length;
             bool doAction = true;
@@ -25,8 +25,6 @@ namespace ArraySort
 
                 length--;
             }
-
-            return _indexing;
         }
 
         public override string ToString() => "Сортировка Пузырьком";

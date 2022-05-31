@@ -4,14 +4,12 @@ namespace ArraySort
 {
     public class QuickSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
-            DoSort(ref array, 0, array.Length - 1);
-
-            return _indexing;
+            CallSort(ref array, 0, array.Length - 1);
         }
 
-        private void DoSort(ref int[] array, int first, int last)
+        private void CallSort(ref int[] array, int first, int last)
         {
             ArrayPrinter.Print(array);
 
@@ -20,8 +18,8 @@ namespace ArraySort
 
             int pivot = ResolvePivot(ref array, first, last);
 
-            DoSort(ref array, first, pivot - 1);
-            DoSort(ref array, pivot + 1, last);
+            CallSort(ref array, first, pivot - 1);
+            CallSort(ref array, pivot + 1, last);
         }
 
         private int ResolvePivot(ref int[] array, int min, int max)

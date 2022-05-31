@@ -4,11 +4,9 @@ namespace ArraySort
 {
     public class InsertSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
             GeneralInsertSort.Process(ref array, 0, 1);
-
-            return _indexing;
         }
 
         public override string ToString() => "Сортировка Вставками";

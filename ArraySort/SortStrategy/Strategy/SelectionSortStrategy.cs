@@ -4,7 +4,7 @@ namespace ArraySort
 {
     public class SelectionSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
             for (int i = 0; i < array.Length - 1; i++)
             {
@@ -21,8 +21,6 @@ namespace ArraySort
 
                 ArrayPrinter.Print(array);
             }
-
-            return _indexing;
         }
 
         public override string ToString() => "Сортировка Выбором";

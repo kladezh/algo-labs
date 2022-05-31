@@ -7,14 +7,12 @@ namespace ArraySort
     {
         private const int RadixCount = 10;
 
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
-            DoSort(ref array, RadixCount, ResolveMaxRadix(array));
-
-            return _indexing;
+            CallSort(ref array, RadixCount, ResolveMaxRadix(array));
         }
 
-        private void DoSort(ref int[] array, int count, int maxRadix)
+        private void CallSort(ref int[] array, int count, int maxRadix)
         {
             int[] source = new int[array.Length];
 

@@ -4,11 +4,9 @@ namespace ArraySort
 {
     public class MergeSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
             Merge(ref array, 0, array.Length - 1);
-
-            return _indexing;
         }
 
         private void Merge(ref int[] array, int first, int last)

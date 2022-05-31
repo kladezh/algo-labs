@@ -4,7 +4,7 @@ namespace ArraySort
 {
     public class CountingSortStrategy : SortStrategy
     {
-        public override List<int[]> Sort(ref int[] array)
+        override protected void DoSort(ref int[] array)
         {
             int min = int.MaxValue;
             int max = int.MinValue;
@@ -29,8 +29,6 @@ namespace ArraySort
                     index++;
                 }
             }
-
-            return _indexing;
         }
 
         public override string ToString() => "Сортировка Подсчётом";
