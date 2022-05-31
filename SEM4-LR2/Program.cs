@@ -28,9 +28,9 @@ namespace SEM4_LR2
             ConsoleInitArray(out int[] array);
 
             Console.WriteLine("\nСгенерированный массив:");
-            ConsoleWriteArray(array);
+            ArrayPrinter.Print(array);
 
-            Console.WriteLine("Выберите вариант сортировки:");
+            Console.WriteLine("\nВыберите вариант сортировки:");
             ConsoleWriteSort();
 
             Console.Write("\nВвод: ");
@@ -42,7 +42,7 @@ namespace SEM4_LR2
             sorter.Sort(ref array);
 
             Console.WriteLine("\nОстортированный массив:");
-            ConsoleWriteArray(array);
+            ArrayPrinter.Print(array);
 
             Console.ReadKey();
         }
@@ -58,16 +58,6 @@ namespace SEM4_LR2
             {
                 array[i] = random.Next(0, 20);
             }
-        }
-
-        static void ConsoleWriteArray(int[] array)
-        {
-            Console.WriteLine("{");
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine($"[{i}] => {array[i]}");
-            }
-            Console.WriteLine("}\n");
         }
 
         static void ConsoleWriteSort()
