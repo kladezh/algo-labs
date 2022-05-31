@@ -16,6 +16,11 @@ namespace ArraySort
             (b, a) = (a, b);
         }
 
+        protected void Index(int[] array)
+        {
+            _indexing.Add((int[])array.Clone());
+        }
+
         public List<int[]> Sort(ref int[] array)
         {
             _indexing.Clear();

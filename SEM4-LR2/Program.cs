@@ -42,7 +42,7 @@ namespace SEM4_LR2
 
             sorter.Sort(ref array);
 
-            Console.Write("\nШаги сортировки:");
+            Console.Write("\nШаги сортировки:\n");
             foreach (var index in sorter.LastIndexing)
                 ArrayPrinter.Print(index);
 
