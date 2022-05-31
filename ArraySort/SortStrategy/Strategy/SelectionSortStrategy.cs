@@ -18,9 +18,11 @@
                 int temp = array[i];
                 array[i] = array[min];
                 array[min] = temp;
+
+                ArrayPrinter.Print(array);
             }
         }
 
-        public override string ToString() => "Быстрая Сортировка";
+        public override string ToString() => "Сортировка Выбором";
     }
 }

@@ -9,6 +9,8 @@
 
         private void DoSort(ref int[] array, int first, int last)
         {
+            ArrayPrinter.Print(array);
+
             if(first >= last)
                 return;
 

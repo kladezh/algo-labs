@@ -16,6 +16,8 @@
                 }
 
                 array[location + j] = newElement;
+
+                ArrayPrinter.Print(array);
             }
         }
     }

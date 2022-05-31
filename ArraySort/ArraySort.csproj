@@ -46,6 +46,7 @@
     <Compile Include="SortStrategy\Strategy\BubbleSortStrategy.cs" />
     <Compile Include="SortStrategy\Strategy\CountingSortStrategy.cs" />
     <Compile Include="SortStrategy\Strategy\HeapSortStrategy.cs" />
+    <Compile Include="SortStrategy\Strategy\Helpers\ArrayPrinter.cs" />
     <Compile Include="SortStrategy\Strategy\Helpers\GeneralInsertSort.cs" />
     <Compile Include="SortStrategy\Strategy\InsertSortStrategy.cs" />
     <Compile Include="SortStrategy\Strategy\MergeSortStrategy.cs" />
