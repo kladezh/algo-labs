@@ -39,7 +39,12 @@ namespace SEM4_LR2
             ArraySorter sorter = new ArraySorter();
 
             sorter.Strategy = ConsoleGetSortStrategy(choice);
+
             sorter.Sort(ref array);
+
+            Console.Write("\nШаги сортировки:");
+            foreach (var index in sorter.LastIndexing)
+                ArrayPrinter.Print(index);
 
             Console.WriteLine("\nОстортированный массив:");
             ArrayPrinter.Print(array);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArraySort
 {
@@ -6,9 +7,11 @@ namespace ArraySort
     {
         private const int RadixCount = 10;
 
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             DoSort(ref array, RadixCount, ResolveMaxRadix(array));
+
+            return _indexing;
         }
 
         private void DoSort(ref int[] array, int count, int maxRadix)

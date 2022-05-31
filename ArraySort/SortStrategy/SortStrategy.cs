@@ -1,7 +1,16 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
-    public interface SortStrategy
+    public abstract class SortStrategy
     {
-        void Sort(ref int[] array);
+        protected List<int[]> _indexing;
+
+        public SortStrategy()
+        {
+            _indexing = new List<int[]>();
+        }
+
+        abstract public List<int[]> Sort(ref int[] array);
     }
 }

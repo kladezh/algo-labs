@@ -1,8 +1,10 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
     public class SelectionSortStrategy : SortStrategy
     {
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             for (int i = 0; i < array.Length - 1; i++)
             {
@@ -21,6 +23,8 @@
 
                 ArrayPrinter.Print(array);
             }
+
+            return _indexing;
         }
 
         public override string ToString() => "Сортировка Выбором";

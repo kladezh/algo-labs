@@ -1,8 +1,10 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
     public class BubbleSortStrategy : SortStrategy
     {
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             int length = array.Length;
             bool doAction = true;
@@ -20,13 +22,13 @@
                         array[i + 1] = temp;
 
                         doAction = true;
-
-                        ArrayPrinter.Print(array);
                     }
                 }
 
                 length--;
             }
+
+            return _indexing;
         }
 
         public override string ToString() => "Сортировка Пузырьком";

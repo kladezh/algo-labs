@@ -1,8 +1,10 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
     public class ShellSortStrategy : SortStrategy
     {
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             int i = 1;
             for (; 2 * i < array.Length; i *= 2) ;
@@ -16,6 +18,8 @@
 
                 i /= 2;
             }
+
+            return _indexing;
         }
 
         public override string ToString() => "Сортировка Шелла";

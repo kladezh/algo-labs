@@ -1,10 +1,14 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
     public class QuickSortStrategy : SortStrategy
     {
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             DoSort(ref array, 0, array.Length - 1);
+
+            return _indexing;
         }
 
         private void DoSort(ref int[] array, int first, int last)

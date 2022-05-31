@@ -1,8 +1,10 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
     public class CountingSortStrategy : SortStrategy
     {
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             int min = int.MaxValue;
             int max = int.MinValue;
@@ -27,6 +29,8 @@
                     index++;
                 }
             }
+
+            return _indexing;
         }
 
         public override string ToString() => "Сортировка Подсчётом";

@@ -1,10 +1,14 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
     public class HeapSortStrategy : SortStrategy
     {
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             DoSort(ref array, array.Length);
+
+            return _indexing;
         }
 
         private void DoSort(ref int[] array, int n)

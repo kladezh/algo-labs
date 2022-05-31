@@ -1,10 +1,14 @@
-﻿namespace ArraySort
+﻿using System.Collections.Generic;
+
+namespace ArraySort
 {
     public class MergeSortStrategy : SortStrategy
     {
-        public void Sort(ref int[] array)
+        public override List<int[]> Sort(ref int[] array)
         {
             Merge(ref array, 0, array.Length - 1);
+
+            return _indexing;
         }
 
         private void Merge(ref int[] array, int first, int last)
