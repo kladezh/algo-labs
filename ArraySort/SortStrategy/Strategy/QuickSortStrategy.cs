@@ -26,8 +26,6 @@ namespace ArraySort
 
         private int ResolvePivot(ref int[] array, int min, int max)
         {
-            int temp;
-
             int pivot = min - 1;
 
             for (int i = min; i <= max; i++)
@@ -35,18 +33,14 @@ namespace ArraySort
                 if(array[i] < array[max])
                 {
                     pivot++;
-                    
-                    temp = array[pivot];
-                    array[pivot] = array[i];
-                    array[i] = temp;
+
+                    Swap(ref array[pivot], ref array[i]);
                 }
             }
 
             pivot++;
 
-            temp = array[pivot];
-            array[pivot] = array[max];
-            array[max] = temp;
+            Swap(ref array[pivot], ref array[max]);
 
             return pivot;
         }

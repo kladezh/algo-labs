@@ -17,9 +17,7 @@ namespace ArraySort
                     }
                 }
 
-                int temp = array[i];
-                array[i] = array[min];
-                array[min] = temp;
+                Swap(ref array[i], ref array[min]);
 
                 ArrayPrinter.Print(array);
             }

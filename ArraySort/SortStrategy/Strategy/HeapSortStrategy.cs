@@ -20,9 +20,7 @@ namespace ArraySort
 
             for (int i = n - 1; i >= 0; i--)
             {
-                int temp = array[i];
-                array[i] = array[0];
-                array[0] = temp;
+                Swap(ref array[i], ref array[0]);
 
                 Heapify(ref array, i, 0);
             }
@@ -42,9 +40,7 @@ namespace ArraySort
 
             if (largest != i)
             {
-                int temp = array[i];
-                array[i] = array[largest];
-                array[largest] = temp;
+                Swap(ref array[i], ref array[largest]);
 
                 Heapify(ref array, n, largest);
             }
