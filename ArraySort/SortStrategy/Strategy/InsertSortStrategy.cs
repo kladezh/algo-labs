@@ -6,7 +6,7 @@ namespace ArraySort
     {
         override protected void DoSort(ref int[] array)
         {
-            for (int i = 0; i < array.Length; i ++)
+            for (int i = 0; i < array.Length; i++)
             {
                 int newElement = array[i];
                 int location = i - 1;
