@@ -6,17 +6,12 @@ namespace ArraySort
     {
         override protected void DoSort(ref int[] array)
         {
-            CallSort(ref array, array.Length);
-        }
-
-        private void CallSort(ref int[] array, int n)
-        {
-            for (int i = n / 2 - 1; i >= 0; i--)
+            for (int i = array.Length / 2 - 1; i >= 0; i--)
             {
-                Heapify(ref array, n, i);
+                Heapify(ref array, array.Length, i);
             }
 
-            for (int i = n - 1; i >= 0; i--)
+            for (int i = array.Length - 1; i >= 0; i--)
             {
                 Swap(ref array[i], ref array[0]);
                 Index(array);
