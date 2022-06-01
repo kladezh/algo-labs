@@ -25,6 +25,7 @@ namespace ArraySort
                         }
 
                         array[location + i] = newElement;
+                        Index(array);
                     }
                 }
 

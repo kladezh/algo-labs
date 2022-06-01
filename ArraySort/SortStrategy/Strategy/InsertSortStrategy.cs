@@ -18,6 +18,7 @@ namespace ArraySort
                 }
 
                 array[location + 1] = newElement;
+                Index(array);
             }
         }
 
