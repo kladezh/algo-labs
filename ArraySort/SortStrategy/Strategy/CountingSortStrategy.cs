@@ -20,6 +20,8 @@ namespace ArraySort
             foreach (int elem in array)
                 counters[elem - min]++;
 
+            Index(counters);
+
             int index = 0;
             for (int number = 0; number < counters.Length; number++)
             {

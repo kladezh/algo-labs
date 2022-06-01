@@ -19,7 +19,7 @@ namespace ArraySort
 
                 Swap(ref array[i], ref array[min]);
 
-                ArrayPrinter.Print(array);
+                Index(array);
             }
         }
 

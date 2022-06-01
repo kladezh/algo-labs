@@ -18,6 +18,7 @@ namespace ArraySort
                 Merge(ref array, split + 1, last);
 
                 DoMerge(ref array, first, split, last);
+                Index(array);
             }
         }
 

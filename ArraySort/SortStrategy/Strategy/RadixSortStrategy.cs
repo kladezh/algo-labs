@@ -41,6 +41,8 @@ namespace ArraySort
                     int d = (source[i] / radPow) % count;
                     array[support[d]] = source[i];
                     support[d]++;
+
+                    Index(array);
                 }
             }
         }

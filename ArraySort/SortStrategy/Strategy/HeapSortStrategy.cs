@@ -19,6 +19,7 @@ namespace ArraySort
             for (int i = n - 1; i >= 0; i--)
             {
                 Swap(ref array[i], ref array[0]);
+                Index(array);
 
                 Heapify(ref array, i, 0);
             }
@@ -39,6 +40,7 @@ namespace ArraySort
             if (largest != i)
             {
                 Swap(ref array[i], ref array[largest]);
+                Index(array);
 
                 Heapify(ref array, n, largest);
             }

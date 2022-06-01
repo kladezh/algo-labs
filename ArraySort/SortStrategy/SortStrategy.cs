@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ArraySort
 {
@@ -18,7 +19,8 @@ namespace ArraySort
 
         protected void Index(int[] array)
         {
-            _indexing.Add((int[])array.Clone());
+            if(_indexing.FindIndex(item => item.SequenceEqual(array)) == -1)
+                _indexing.Add((int[])array.Clone());  
         }
 
         public List<int[]> Sort(ref int[] array)

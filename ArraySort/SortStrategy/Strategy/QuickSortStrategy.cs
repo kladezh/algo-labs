@@ -11,9 +11,9 @@ namespace ArraySort
 
         private void CallSort(ref int[] array, int first, int last)
         {
-            ArrayPrinter.Print(array);
+            Index(array);
 
-            if(first >= last)
+            if (first >= last)
                 return;
 
             int pivot = ResolvePivot(ref array, first, last);

@@ -20,6 +20,8 @@ namespace ArraySort
                         Swap(ref array[i], ref array[i + 1]);
 
                         doAction = true;
+
+                        Index(array);
                     }
                 }
 
