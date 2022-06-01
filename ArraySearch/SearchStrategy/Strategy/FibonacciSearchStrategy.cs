@@ -6,8 +6,8 @@
         {
             int k = 0;
 
-            for (; Fibonacci(k) < array.Length; k++) ;
-     
+            for (; Fibonacci(k + 1) < array.Length; k++) ;
+
             for (int index, offset = 0; k > 0; )
             {
                 index = offset + Fibonacci(--k);
