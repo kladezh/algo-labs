@@ -13,7 +13,19 @@ namespace ArraySort
             {
                 for(int start = 1; start <= i; start++)
                 {
-                    GeneralInsertSort.Process(ref array, start, i);
+                    for (int k = start; k < array.Length; k += i)
+                    {
+                        int newElement = array[k];
+                        int location = k - i;
+
+                        while (location >= 0 && array[location] > newElement)
+                        {
+                            array[location + i] = array[location];
+                            location -= i;
+                        }
+
+                        array[location + i] = newElement;
+                    }
                 }
 
                 i /= 2;
