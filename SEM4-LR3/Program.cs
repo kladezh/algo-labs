@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,8 @@ namespace SEM4_LR3
             {
                 array[i] = random.Next(0, 20);
             }
+
+            Array.Sort(array);
         }
 
         static void ConsoleWriteArray(int[] array)
