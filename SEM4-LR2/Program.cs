@@ -52,7 +52,7 @@ namespace SEM4_LR2
             Console.ReadKey();
         }
 
-        static void ConsoleInitArray(out int[] array)
+        static void ConsoleInitRandomArray(out int[] array)
         {
             int length = int.Parse(Console.ReadLine());
 
@@ -62,6 +62,19 @@ namespace SEM4_LR2
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = random.Next(0, 20);
+            }
+        }
+
+        static void ConsoleInitArray(out int[] array)
+        {
+            int length = int.Parse(Console.ReadLine());
+
+            array = new int[length];
+
+            Console.WriteLine("\nВведите элементы массива:");
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());
             }
         }
 
