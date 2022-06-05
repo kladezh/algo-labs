@@ -23,10 +23,10 @@ namespace SEM4_LR3
 
         static void Main(string[] args)
         {
-            Console.Write("Введите размер массива: ");
             ConsoleInitArray(out int[] array);
 
-            Console.WriteLine("\nСгенерированный массив:");
+            Array.Sort(array);
+            Console.WriteLine("\nОтсортированный массив:");
             ConsoleWriteArray(array);
 
             Console.WriteLine("Выберите вариант поиска:");
@@ -48,8 +48,10 @@ namespace SEM4_LR3
             Console.ReadKey();
         }
 
-        static void ConsoleInitArray(out int[] array)
+        static void ConsoleInitRandomArray(out int[] array)
         {
+            Console.Write("Введите размер массива: ");
+
             int length = int.Parse(Console.ReadLine());
 
             array = new int[length];
@@ -63,6 +65,20 @@ namespace SEM4_LR3
             Array.Sort(array);
         }
 
+        static void ConsoleInitArray(out int[] array)
+        {
+            Console.Write("Введите размер массива: ");
+
+            int length = int.Parse(Console.ReadLine());
+
+            array = new int[length];
+
+            Console.WriteLine("\nВведите элементы массива:");
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());
+            }
+        }
         static void ConsoleWriteArray(int[] array)
         {
             Console.WriteLine("{");

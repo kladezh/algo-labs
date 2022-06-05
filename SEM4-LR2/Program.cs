@@ -42,12 +42,31 @@ namespace SEM4_LR2
 
             sorter.Sort(ref array);
 
-            Console.Write("\nШаги сортировки:\n");
+            Console.WriteLine("\nШаги сортировки:");
             foreach (var index in sorter.LastIndexing)
                 ConsolePrintArray(index);
 
             Console.WriteLine("\nОстортированный массив:");
             ConsolePrintArray(array);
+
+            // Задание: посчитать разность элементов на второй и предпоследней итерации в Пирамидальной сортировке
+            // > >
+            if (sorter.Strategy is HeapSortStrategy)
+            {
+                List<int[]> taskList = new List<int[]>();
+                taskList.Add((int[])sorter.LastIndexing[1].Clone());
+                taskList.Add((int[])sorter.LastIndexing[sorter.LastIndexing.Count - 2].Clone());
+
+                int[] taskOutput = new int[array.Length];
+                for (int i = 0; i < taskOutput.Length; i++)
+                {
+                    taskOutput[i] = taskList[0][i] - taskList[1][i];
+                }
+
+                Console.WriteLine("\nРазность элементов второй и предпоследней итерации:");
+                ConsolePrintArray(taskOutput);
+            }
+            // < < 
 
             Console.ReadKey();
         }
